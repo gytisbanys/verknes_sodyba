@@ -1,0 +1,712 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.nuoroda {
+  width: 100%;
+  position: absolute;
+  height: 140px;
+  top: -140px;
+  z-index: -1;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #e7b24f;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+a:active {
+  color: black;
+}
+
+.turinio-containeris {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.puslapis-centravimas {
+  width: 100%;
+}
+
+.navigacija {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background: #fff;
+  -webkit-box-shadow: 0rem 1rem 5rem rgba(0, 0, 0, 0.356);
+          box-shadow: 0rem 1rem 5rem rgba(0, 0, 0, 0.356);
+  z-index: 500;
+}
+
+.navigacija .navigacija-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem;
+  margin: 0 auto;
+  -webkit-transition: padding 200ms ease;
+  transition: padding 200ms ease;
+}
+
+.navigacija .navigacija-logo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 3.5rem;
+  -webkit-transition: height 200ms ease;
+  transition: height 200ms ease;
+}
+
+.navigacija .navigacija-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .navigacija .navigacija-logo {
+    -webkit-box-flex: inherit;
+        -ms-flex-positive: inherit;
+            flex-grow: inherit;
+  }
+}
+
+.navigacija .navigacija-hamburgeris {
+  width: 5rem;
+  height: 5rem;
+}
+
+.navigacija .navigacija-hamburgeris a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona, .navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona::after, .navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona::before {
+  background: #e7b24f;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+
+.navigacija .navigacija-hamburgeris .hamburgeris-ikona {
+  width: 80%;
+  height: .25rem;
+  background: black;
+  border-radius: 1rem;
+}
+
+.navigacija .navigacija-hamburgeris .hamburgeris-ikona::before, .navigacija .navigacija-hamburgeris .hamburgeris-ikona::after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 100%;
+  height: .25rem;
+  background: black;
+  border-radius: 1rem;
+}
+
+.navigacija .navigacija-hamburgeris .hamburgeris-ikona::before {
+  -webkit-transform: translate(0rem, -1.25rem);
+          transform: translate(0rem, -1.25rem);
+}
+
+.navigacija .navigacija-hamburgeris .hamburgeris-ikona::after {
+  -webkit-transform: translate(0rem, 1rem);
+          transform: translate(0rem, 1rem);
+}
+
+@media (min-width: 576px) {
+  .navigacija .navigacija-hamburgeris {
+    display: none;
+  }
+}
+
+.navigacija .navigacija-meniu {
+  display: none;
+  list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1rem;
+  -webkit-transition: margin 200ms ease;
+  transition: margin 200ms ease;
+}
+
+.navigacija .navigacija-meniu li {
+  text-align: center;
+  padding: .5rem .75rem;
+  -webkit-transition: padding 200ms ease;
+  transition: padding 200ms ease;
+}
+
+.navigacija .navigacija-meniu li a {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .navigacija .navigacija-meniu li {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    padding: 0rem 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .navigacija .navigacija-meniu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navigacija .navigacija-kontaktai {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: height 200ms ease;
+  transition: height 200ms ease;
+}
+
+.navigacija .navigacija-kontaktai .navigacija-svg {
+  margin: 0rem .5rem;
+}
+
+.navigacija .navigacija-kontaktai .navigacija-svg::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: .85rem;
+  height: .85rem;
+  margin-right: .25rem;
+}
+
+.navigacija .navigacija-kontaktai .navigacija-tel::before {
+  background: url("media/tel.svg");
+  background-size: contain;
+}
+
+.navigacija .navigacija-kontaktai .navigacija-pastas::before {
+  background: url("media/pastas.svg");
+  background-size: contain;
+}
+
+.puslapis-titulinis {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url("media/titulinis.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.puslapis-titulinis .titulinis-tekstas {
+  background: rgba(255, 255, 255, 0.24);
+  -webkit-backdrop-filter: blur(2rem) contrast(1.2) brightness(1.7);
+          backdrop-filter: blur(2rem) contrast(1.2) brightness(1.7);
+  border-radius: 1rem;
+  padding: .75rem;
+  padding-top: .3rem;
+}
+
+.puslapis-titulinis .titulinis-tekstas h1 {
+  font-size: 2rem;
+  color: #e7b24f;
+  text-shadow: 0rem 0.1rem 0rem rgba(0, 0, 0, 0.656);
+  text-align: center;
+  -webkit-transition: font-size 200ms ease;
+  transition: font-size 200ms ease;
+}
+
+@media (min-width: 768px) {
+  .puslapis-titulinis .titulinis-tekstas h1 {
+    font-size: 3rem;
+  }
+}
+
+.puslapis-titulinis .titulinis-tekstas h3 {
+  font-size: 1.25rem;
+  color: white;
+  text-shadow: 0rem 0.1rem 0rem rgba(0, 0, 0, 0.656);
+  text-align: center;
+  -webkit-transition: font-size 200ms ease;
+  transition: font-size 200ms ease;
+}
+
+@media (min-width: 768px) {
+  .puslapis-titulinis .titulinis-tekstas h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .puslapis-titulinis {
+    background-attachment: fixed;
+  }
+}
+
+.puslapis-apie {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.puslapis-apie .puslapis-turinys {
+  background-color: #e7b24f;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  padding-bottom: 8rem;
+  margin-top: -2rem;
+}
+
+.puslapis-apie .puslapis-turinys h1 {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.puslapis-apie .puslapis-turinys p {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.puslapis-paslaugos {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: -2rem;
+  z-index: 2;
+}
+
+.puslapis-paslaugos .puslapis-turinys {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: -6rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracija {
+  width: 100%;
+  background: #76c26e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4c83c1), color-stop(49%, #4c83c1), color-stop(50%, #76c26e), to(#76c26e));
+  background: linear-gradient(#4c83c1 0%, #4c83c1 49%, #76c26e 50%, #76c26e 100%);
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracija img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracija {
+    width: 70%;
+  }
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas h1 {
+  margin: 1rem 2rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas .paslaugos-paslauga {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0rem 1rem 1rem 2rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas .paslaugos-paslauga .paslauga-numeris {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 100%;
+  background: #e7b24f;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas .paslaugos-paslauga span {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .puslapis-paslaugos .puslapis-turinys .paslaugos-iliustracijos-tekstas {
+    padding-top: 6rem;
+    width: 30%;
+  }
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos {
+  width: 100%;
+  padding: 1rem 0rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos h3 {
+  font-size: 2rem;
+}
+
+.puslapis-paslaugos .puslapis-turinys .paslaugos p {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .puslapis-paslaugos .puslapis-turinys {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.puslapis-kainorastis {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+.puslapis-kainorastis .puslapis-turinys {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2rem 0rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 49%;
+      flex-basis: 49%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis p {
+  margin: .5rem 1rem;
+  font-size: 1.25rem;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis .kainos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: .5rem 0rem;
+  background: #e4e4e4;
+  border-radius: 1rem;
+  overflow: hidden;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis .kainos span {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: .75rem;
+  font-size: 1.25rem;
+}
+
+.puslapis-kainorastis .puslapis-turinys .kainorastis .kainos div {
+  min-width: 5rem;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  background: #e7b24f;
+  padding: .75rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .puslapis-kainorastis .puslapis-turinys .kainorastis .kainos {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+}
+
+@media (min-width: 768px) {
+  .puslapis-kainorastis .puslapis-turinys .kainorastis {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  z-index: 4;
+}
+
+footer .kontaktai {
+  width: 100%;
+  background: #43893f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  background: #e7b24f;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a {
+  width: 100%;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a .kontaktai-mygtukas {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  -webkit-transition: background 200ms ease, color 200ms ease;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a .kontaktai-mygtukas h3 {
+  font-size: 2rem;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a .kontaktai-mygtukas p {
+  text-align: center;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a:hover .kontaktai-mygtukas, footer .kontaktai .kontaktai-mygtuku-containeris a:last-of-type:hover .kontaktai-mygtukas {
+  background: #f3d9a9;
+  color: #b78019;
+}
+
+footer .kontaktai .kontaktai-mygtuku-containeris a:last-of-type .kontaktai-mygtukas {
+  background: #ecc273;
+}
+
+@media (min-width: 768px) {
+  footer .kontaktai .kontaktai-mygtuku-containeris a {
+    width: 50%;
+  }
+}
+
+footer .kontaktai .kontaktai-blokai {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2rem 0rem;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-blokas-pirmas, footer .kontaktai .kontaktai-blokai .kontaktai-blokas-antras {
+  padding: 0rem 2rem;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  footer .kontaktai .kontaktai-blokai .kontaktai-blokas-pirmas, footer .kontaktai .kontaktai-blokai .kontaktai-blokas-antras {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-blokas-pirmas {
+  margin-bottom: 1rem;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-meniu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-meniu li {
+  padding: .25rem;
+  font-size: 1.25rem;
+  color: white;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-meniu li h3 {
+  font-weight: 800;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-meniu li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .kontaktai .kontaktai-blokai .kontaktai-meniu li img {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: .75rem;
+}
+
+footer .kontaktai-zemelapis {
+  width: 100%;
+  height: 18rem;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,4 @@
+1. Scroll defaulting to initial location when moving mouse towards middle;
+2. Mobile too big top bar.
+3. Mobile top bar in general, specially landscape.
+4. Mobile margins.

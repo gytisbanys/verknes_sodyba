@@ -466,9 +466,9 @@ a {
                 font-size: 1.25rem;
                 line-height: 2rem;
             }
-            @include xl {
-                padding: 1rem 0rem;
-            }
+            //@include xl {
+            //    padding: 1rem;
+            //}
         } //paslaugos
 
         @include md {
@@ -545,6 +545,40 @@ a {
         } // kainorastis
     } // puslapis-turinys
 } // puslapis-kainorastis
+
+.puslapis-galerija {
+    position: relative;
+    width: 100%;
+    z-index: 4;
+
+    h1 {
+        margin: 0rem 1rem;
+    }
+
+    .galerija-turinys {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+
+        .galerija-nuotrauka {
+            flex-basis: 100%;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+                border-radius: 1rem;
+            }
+            @include md {
+                flex-basis: 50%;
+            }
+            @include xl {
+                flex-basis: 33.33%;
+            }
+        }
+    }
+}
 
 // Footeris
 footer {

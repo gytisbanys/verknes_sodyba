@@ -108,7 +108,7 @@ a:active {
   height: 5rem;
 }
 
-.navigacija .navigacija-hamburgeris a {
+.navigacija .navigacija-hamburgeris .hamburgeris-containeris {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,7 +122,7 @@ a:active {
   height: 100%;
 }
 
-.navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona, .navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona::after, .navigacija .navigacija-hamburgeris a:hover .hamburgeris-ikona::before {
+.navigacija .navigacija-hamburgeris .hamburgeris-containeris:hover .hamburgeris-ikona, .navigacija .navigacija-hamburgeris .hamburgeris-containeris:hover .hamburgeris-ikona::after, .navigacija .navigacija-hamburgeris .hamburgeris-containeris:hover .hamburgeris-ikona::before {
   background: #e7b24f;
   -webkit-transition: background 0.2s ease;
   transition: background 0.2s ease;
@@ -155,7 +155,7 @@ a:active {
           transform: translate(0rem, 1rem);
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
   .navigacija .navigacija-hamburgeris {
     display: none;
   }
@@ -193,7 +193,7 @@ a:active {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
   .navigacija .navigacija-meniu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -202,9 +202,7 @@ a:active {
 }
 
 .navigacija .navigacija-kontaktai {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -239,6 +237,124 @@ a:active {
 .navigacija .navigacija-kontaktai .navigacija-pastas::before {
   background: url("media/pastas.svg");
   background-size: contain;
+}
+
+@media (min-width: 1200px) {
+  .navigacija .navigacija-kontaktai {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navigacija .navigacija-mobili {
+  position: fixed;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #43893f;
+  color: white;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas {
+  width: 100%;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .navigacija-logo {
+  width: auto;
+  height: 5rem;
+  background: white;
+  padding: .5rem;
+  border-radius: 1rem;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-containeris {
+  margin-left: 1rem;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-containeris:hover .hamburgeris-ikona::before, .navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-containeris:hover .hamburgeris-ikona::after {
+  background: #e7b24f;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-ikona {
+  width: 5rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background 200ms ease;
+  transition: background 200ms ease;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-ikona::before, .navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-ikona::after {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: .5rem;
+  background: white;
+  -webkit-transition: background 200ms ease;
+  transition: background 200ms ease;
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-ikona::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.navigacija .navigacija-mobili .navigacija-grizimas .hamburgeris-ikona::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.navigacija .navigacija-mobili li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style-type: none;
+  margin: 1rem 0rem;
+}
+
+.navigacija .navigacija-mobili li a {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: #54ac4f;
+  border-radius: 1rem;
+  -webkit-transition: background 200ms ease, color 200ms ease;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.navigacija .navigacija-mobili li a:hover {
+  background: #e7b24f;
+  color: black;
 }
 
 .puslapis-titulinis {
@@ -436,7 +552,7 @@ a:active {
 
 .puslapis-paslaugos .puslapis-turinys .paslaugos {
   width: 100%;
-  padding: 1rem 0rem;
+  padding: 1rem;
 }
 
 .puslapis-paslaugos .puslapis-turinys .paslaugos h3 {
@@ -446,6 +562,12 @@ a:active {
 .puslapis-paslaugos .puslapis-turinys .paslaugos p {
   font-size: 1.25rem;
   line-height: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .puslapis-paslaugos .puslapis-turinys .paslaugos {
+    padding: 1rem 0rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -477,6 +599,7 @@ a:active {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 2rem 0rem;
+  padding: 1rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -555,6 +678,12 @@ a:active {
   }
 }
 
+@media (min-width: 1200px) {
+  .puslapis-kainorastis .puslapis-turinys .kainorastis {
+    padding: 0px;
+  }
+}
+
 footer {
   position: relative;
   width: 100%;
@@ -600,7 +729,7 @@ footer .kontaktai .kontaktai-mygtuku-containeris a {
 
 footer .kontaktai .kontaktai-mygtuku-containeris a .kontaktai-mygtukas {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

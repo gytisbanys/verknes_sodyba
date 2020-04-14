@@ -10,8 +10,8 @@
     <meta property="og:description" content="Patogiai, jaukiai įrengta stovyklavietė 100-metų turinčiame vienkiemyje ant Verknės upės kranto. Puiki, rami, saugi vieta, tinkanti poilsiauti šeimoms, draugų susitikimui, darbo kolektyvams.">
     <meta property="og:title" content="Atokvėpis prie Verknės – stovyklavietė">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="script/jquery-3.5.0.min.js" type="text/javascript"></script>
     <script src="script/js.js"></script>
-    <script src="script/jquery-3.5.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -23,7 +23,9 @@
                     </a>
                 </div>
                 <div class="navigacija-hamburgeris">
-                    <a href=""><div class="hamburgeris-ikona"></div></a>
+                    <div class="hamburgeris-containeris">
+                        <div class="hamburgeris-ikona"></div>
+                    </div>
                 </div>
                 <ul class="navigacija-meniu">
                     <li><a href="#apie">Apie stovyklavietę</a>
@@ -45,6 +47,38 @@
                         <a href="mailto:pastas@gmail.com">pastas@gmail.com</a>
                     </li>
                 </ul>
+            </div>
+            <div class="navigacija-mobili">
+                <div class="navigacija-grizimas">
+                    <div class="navigacija-logo">
+                        <a href="#pradzia">
+                            <img src="media/logotipas.svg">
+                        </a>
+                    </div>
+                    <div class="hamburgeris-containeris">
+                        <div class="hamburgeris-ikona"></div>
+                    </div>
+                </div>
+                <ul>
+                    <li><a href="#apie">Apie stovyklavietę</a>
+                    </li>
+                    <li><a href="#paslaugos">Paslaugos</a>
+                    </li>
+                    <li><a href="#kainorsatis">Kainoraštis</a>
+                    </li>
+                    <li><a href="#galerija">Galerija</a>
+                    </li>
+                    <li><a href="#kontaktai">Kontaktai</a>
+                    </li>
+                    <li class="navigacija-svg navigacija-tel">
+                        <a href="tel:868259377">Skambinkite: 8-682 59377</a>
+                    </li>
+                    <li class="navigacija-svg navigacija-pastas">
+                        <a href="mailto:pastas@gmail.com">Susisiekite: pastas@gmail.com</a>
+                    </li>
+                </ul>
+
+
             </div>
         </nav>
     </header>

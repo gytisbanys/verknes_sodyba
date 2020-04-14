@@ -129,7 +129,7 @@ a {
     .navigacija-hamburgeris {
         width: 5rem;
         height: 5rem;
-        a {
+        .hamburgeris-containeris {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -164,7 +164,7 @@ a {
                 transform: translate(0rem, 1rem);
             }
         }
-        @include sm {
+        @include xl {
             display: none;
         }
     }
@@ -192,13 +192,13 @@ a {
                 padding: 0rem 1rem;
             }
         } //li
-        @include sm {
+        @include xl {
             display: flex;
         }
     } //navigacija-meniu
 
     .navigacija-kontaktai {
-        display: flex;
+        display: none;
         justify-content: center;
         list-style-type: none;
         flex-grow: 1;
@@ -228,7 +228,91 @@ a {
         //@include xl {
         //    flex-direction: column;
         //}
+        @include xl {
+            display: flex;
+        }
     } //navigacija-kontaktai
+    .navigacija-mobili {
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: $color-primary;
+        color: white;
+        padding: 1rem;
+        overflow: auto;
+
+        .navigacija-grizimas {
+            width: 100%;
+            height: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            .navigacija-logo {
+                width: auto;
+                height: 5rem;
+                background: white;
+                padding: .5rem;
+                border-radius: 1rem;
+            }
+
+            .hamburgeris-containeris {
+                margin-left: 1rem;
+
+                &:hover .hamburgeris-ikona::before, &:hover .hamburgeris-ikona::after {
+                    background: $color-secondary;
+                }
+            }
+
+            .hamburgeris-ikona {
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 200ms ease;
+
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    width: 5rem;
+                    height: .5rem;
+                    background: white;
+                    transition: background 200ms ease;
+                }
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        li {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            margin: 1rem 0rem;
+
+            a {
+                font-size: 1.5rem;
+                padding: 1rem;
+                background: lighten($color-primary, 10%);
+                border-radius: 1rem;
+                transition: background 200ms ease, color 200ms ease;
+
+                &:hover {
+                    background: $color-secondary;
+                    color: black;
+                }
+            } //a
+        } //li
+    } //navigacija-mobili
 } //navigacija
 
 .puslapis-titulinis {
@@ -373,7 +457,7 @@ a {
 
         .paslaugos {
             width: 100%;
-            padding: 1rem 0rem;
+            padding: 1rem;
 
             h3 {
                 font-size: 2rem;
@@ -381,6 +465,9 @@ a {
             p {
                 font-size: 1.25rem;
                 line-height: 2rem;
+            }
+            @include xl {
+                padding: 1rem 0rem;
             }
         } //paslaugos
 
@@ -402,6 +489,7 @@ a {
         flex-direction: row;
         justify-content: space-between;
         margin: 2rem 0rem;
+        padding: 1rem;
         flex-wrap: wrap;
 
         .kainorastis {
@@ -424,6 +512,7 @@ a {
                 align-items: center;
                 flex-basis: 100%;
                 margin: .5rem 0rem;
+                //padding: 1rem;
                 background: $color-fonas-tamsus;
                 border-radius: 1rem;
                 overflow: hidden;
@@ -449,6 +538,9 @@ a {
             } //kainos
             @include md {
                 flex-basis: 48%;
+            }
+            @include xl {
+                padding: 0px;
             }
         } // kainorastis
     } // puslapis-turinys
@@ -483,7 +575,7 @@ footer {
 
                 .kontaktai-mygtukas {
                     width: 100%;
-                    height: 100%;
+                    height: auto;
                     display: flex;
                     align-items: center;
                     justify-content: center;

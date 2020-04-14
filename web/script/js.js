@@ -1,3 +1,5 @@
+$(function() {
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -26,17 +28,23 @@ function scrollFunction() {
         x[i].style.padding = "";
     }
   }
+};
+
+function mobili() {
+  $(".navigacija-mobili").slideToggle();
 }
 
-const mygtukai = document.querySelectorAll(".navigacija .navigacija-meniu li a");
-for (const mygtukas of mygtukai) {
-  mygtukas.addEventListener("click", function() {
-    const nuorodos = document.querySelectorAll(".nuoroda");
-    var aukstis = document.querySelector(".navigacija").clientHeight;
-    for (const nuoroda of nuorodos) {
-      nuoroda.style.height = aukstis + "px";
-      nuoroda.style.top = "-" + aukstis + "px";    
-    }
-  })
-}
+$(".hamburgeris-containeris").click(function() {
+  mobili();
+});
 
+$(".navigacija-mobili a").click(function() {
+  $(".navigacija-mobili").slideToggle();
+});
+
+$(".navigacija a").click(function() {
+  var aukstis = $(".navigacija").height() + "px";
+  $(".nuoroda").css({"height": aukstis, "top": "-" + aukstis });
+});
+
+});

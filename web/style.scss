@@ -2,10 +2,11 @@
 $color-fonas-sviesus: #fff;
 $color-fonas-tamsus: rgb(228, 228, 228);
 $color-primary: #43893f;
-$color-secondary: #e7b24f;
+$color-secondary: #faa749;
 $seselis-pagrindinis: 0rem 1rem 5rem rgba(0, 0, 0, 0.356);
 $seselis-mazas: 0rem 0.1rem 0rem rgba(0, 0, 0, 0.656);
 $sriftas: 'Quicksand', sans-serif;
+$gradientas: linear-gradient(180deg, #f3f3f3, transparent);
 
 // QUERIES
 // Small tablets and large smartphones (landscape view)
@@ -54,6 +55,8 @@ html {
 }
 
 body {
+    width: 100%;
+    height: 100%;
     font-family: $sriftas;
 }
 
@@ -103,15 +106,17 @@ a {
     //transition: all 200ms ease;
 
     .navigacija-wrap {
+        max-width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
+       
         padding: .25rem;
         margin: 0 auto;
         transition: padding 200ms ease;
 
         @include xl {
+            flex-wrap: wrap;
             padding: 1rem;
         }
     } //navigacija-wrap
@@ -125,7 +130,7 @@ a {
             width: 100%;
             height: 100%;
         }
-        @include md {
+        @include xl {
             flex-grow: inherit;
         }
     } //navigacija-logo
@@ -151,6 +156,7 @@ a {
             height: .25rem;
             background: black;
             border-radius: 1rem;
+            cursor: pointer;
 
             &::before, &::after {
                 position: relative;
@@ -188,6 +194,16 @@ a {
             padding: .5rem .75rem;
             transition: padding 200ms ease;
 
+            a:after {
+                display:block;
+                content: "";
+                transform: scaleX(0);  
+                border-bottom: solid 2px $color-secondary;  
+                transition: transform 200ms ease;
+            }
+            &:hover a:after {
+                transform: scaleX(1);
+            }
             a {
                 font-size: 1.2rem;
             }
@@ -233,6 +249,7 @@ a {
         //    flex-direction: column;
         //}
         @include xl {
+            flex-grow: 0;
             display: flex;
         }
     } //navigacija-kontaktai
@@ -241,26 +258,27 @@ a {
         display: none;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         top: 0;
         left: 0;
-        background: $color-primary;
-        color: white;
-        padding: 1rem;
+        background: white;
+        //color: $color-secondary;
+        //padding: 1rem;
         overflow: auto;
 
         .navigacija-grizimas {
             width: 100%;
             height: 5rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 1rem;
+            background: white;
+            box-shadow: $seselis-pagrindinis;
+            margin-bottom: 2rem;
 
             .navigacija-logo {
                 width: auto;
                 height: 5rem;
-                background: white;
                 padding: .5rem;
                 border-radius: 1rem;
             }
@@ -280,13 +298,14 @@ a {
                 align-items: center;
                 justify-content: center;
                 transition: background 200ms ease;
+                cursor: pointer;
 
                 &::before, &::after {
                     content: "";
                     position: absolute;
                     width: 5rem;
                     height: .5rem;
-                    background: white;
+                    background: black;
                     transition: background 200ms ease;
                 }
                 &::before {
@@ -297,25 +316,46 @@ a {
                 }
             }
         }
+        ul {
+            min-height: calc(100% - 7rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0rem 1rem;
+        }
         li {
+            width: 100%;
             display: flex;
             flex-direction: row;
             list-style-type: none;
             margin: 1rem 0rem;
 
             a {
+                width: 100%;
                 font-size: 1.5rem;
                 padding: 1rem;
-                background: lighten($color-primary, 10%);
+                background: $color-secondary;
                 border-radius: 1rem;
                 transition: background 200ms ease, color 200ms ease;
+                text-align: center;
+                color: black;
 
                 &:hover {
-                    background: $color-secondary;
+                    background: lighten($color-secondary, 10%);
                     color: black;
                 }
             } //a
         } //li
+        .navigacija-svg {
+            margin-bottom: 0px;
+
+            a {
+                font-size: 1.2rem;
+                border-top: 2px solid $color-primary;
+                background: white;
+            }
+        }
     } //navigacija-mobili
 } //navigacija
 
@@ -427,9 +467,15 @@ a {
         margin-top: -1rem;
 
         .puslapis-sukis {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             text-align: center;
+            padding: 1rem;
+            margin-top: -1.5rem;
+            margin-bottom: 2.5rem;
+            //border-bottom: 2px solid darken($color-secondary, 20%);
+            box-shadow: $seselis-pagrindinis;
+            border-radius: 1rem;
         }
 
         h1 {
@@ -438,6 +484,7 @@ a {
         p {
             font-size: 1.25rem;
             line-height: 2rem;
+            text-align: justify;
         }
     } //puslapis-turinys
 } //puslapis-apie
@@ -480,6 +527,7 @@ a {
             
             h1 {
                 margin: 1rem 2rem; 
+                color: $color-primary;
             }
             .paslaugos-paslauga {
                 display: flex;
@@ -511,14 +559,54 @@ a {
 
         .paslaugos {
             width: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
             padding: 1rem;
 
-            h3 {
-                font-size: 2rem;
+            .paslaugos-atstumai {
+                flex-basis: 100%;
+                flex-grow: 1;
+                margin-right: 1rem;
+
+                @include md {
+                    flex-basis: 45%;
+                    flex-grow: 1;
+                }
+                h3 {
+                    padding: 1rem 1rem;
+                    border-radius: 1rem 1rem 0rem 0rem;
+                    background: $gradientas;
+                    color: $color-primary;
+                    font-size: 2rem;
+                }
+                p {
+                    font-size: 1.25rem;
+                    line-height: 3rem;
+                    border-bottom: 2px solid $color-primary;
+                    margin: 0rem 1rem;
+
+                    span {
+                        float: right;
+                    }
+                    &:last-of-type {
+                        border-bottom: none;
+                    }
+                }
             }
-            p {
-                font-size: 1.25rem;
-                line-height: 2rem;
+            .paslaugos-verkne {
+                flex-basis: 100%;
+                flex-grow: 1;
+
+                @include md {
+                    flex-basis: 45%;
+                    flex-grow: 1;
+                }
+                img {
+                    border-radius: 1rem;
+                    width: 100%;
+                    height: auto;
+                }
             }
             //@include xl {
             //    padding: 1rem;
@@ -542,7 +630,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 2rem 0rem;
+        margin: 2rem 0rem 1rem;
         padding: 1rem;
         flex-wrap: wrap;
 
@@ -551,6 +639,12 @@ a {
             //display: flex;
             //flex-direction: column;
 
+            h1 {
+                padding: 1rem 1rem;
+                border-radius: 1rem 1rem 0rem 0rem;
+                background: $gradientas;
+                color: $color-primary;
+            }
             h3 {
                 display: flex;
                 flex-basis: 49%;
@@ -560,6 +654,15 @@ a {
             p {
                 margin: .5rem 1rem;
                 font-size: 1.25rem;
+                line-height: 2rem;
+                border-bottom: 2px solid #43893f;
+
+                &:first-of-type {
+                    margin-top: 1rem;
+                }
+                &:last-of-type {
+                    border-bottom: none;
+                }
             }
             .kainos {
                 display: flex;
@@ -606,7 +709,11 @@ a {
     z-index: 4;
 
     h1 {
+        padding: 1rem 1rem;
         margin: 0rem 1rem;
+        border-radius: 1rem 1rem 0rem 0rem;
+        background: $gradientas;
+        color: $color-primary;
     }
 
     .galerija-turinys {
@@ -640,6 +747,7 @@ footer {
     width: 100%;
     z-index: 4;
     margin-top: -1rem;
+    overflow-x: hidden;
 
     @include xl {
         margin-top: 2rem;
@@ -701,6 +809,7 @@ footer {
             margin: 2rem 0rem;
 
             .kontaktai-blokas-pirmas, .kontaktai-blokas-antras {
+                width: 100%;
                 padding: 0rem 2rem;
                 flex-basis: 100%;
 
@@ -714,6 +823,7 @@ footer {
             }
 
             .kontaktai-meniu {
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 list-style-type: none;
@@ -725,12 +835,15 @@ footer {
                     h3 {
                         font-weight: 800;
                     }
-
                     a {
+                        width: 100%;
                         display: flex;
                         align-items: center;
                     }
-
+                    span {
+                        width: 100%;
+                        white-space: pre-wrap;
+                    }
                     img {
                         width: 1.25rem;
                         height: 1.25rem;

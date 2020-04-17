@@ -6,7 +6,7 @@ function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     //document.querySelector(".navigacija-kontaktai").style.height = "0rem";
     document.querySelector(".navigacija-logo").style.height = "2.5rem";
-    document.querySelector(".navigacija .navigacija-wrap").style.padding = ".5rem";
+    document.querySelector(".navigacija .navigacija-wrap").style.padding = ".5rem 0rem";
     document.querySelector(".navigacija .navigacija-meniu").style.margin = ".25rem";
     document.querySelector(".navigacija .navigacija-hamburgeris").style.height = "3rem";
     document.querySelector(".navigacija").style.boxShadow = "0rem 0rem 1rem rgba(0, 0, 0, 0.2)";
@@ -15,6 +15,7 @@ function scrollFunction() {
     for (let i = 0; i < x.length; i++) {
         x[i].style.padding = "2px .5rem";
     }
+    $(".navigacija-kontaktai").css({"height": "0px", "width": "0px"});
   } else {
     //document.querySelector(".navigacija-kontaktai").style.height = "";
     document.querySelector(".navigacija-logo").style.height = "";
@@ -27,6 +28,7 @@ function scrollFunction() {
     for (let i = 0; i < x.length; i++) {
         x[i].style.padding = "";
     }
+    $(".navigacija-kontaktai").css({"height": "", "width": ""});
   }
 };
 

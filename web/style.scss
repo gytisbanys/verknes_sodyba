@@ -107,9 +107,13 @@ a {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 1rem;
+        padding: .25rem;
         margin: 0 auto;
         transition: padding 200ms ease;
+
+        @include xl {
+            padding: 1rem;
+        }
     } //navigacija-wrap
 
     .navigacija-logo {
@@ -315,6 +319,17 @@ a {
     } //navigacija-mobili
 } //navigacija
 
+.pagrindinis-containeris {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 1rem 1rem 0rem 0rem;
+
+    @include xl {
+        border-radius: 1rem;
+    }
+}
+
 .puslapis-titulinis {
     position: relative;
     width: 100%;
@@ -322,11 +337,44 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("media/titulinis.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    //background: url("media/titulinis.jpg");
+    //background-size: cover;
+    //background-position: center;
+    //background-repeat: no-repeat;
+    //background-attachment: scroll;
+    overflow: hidden;
+
+    .titulinis-fonai {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+    }
+
+    .titulinis-fonas {
+        position: fixed;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        min-width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+
+        .fonas-containeris {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
 
     .titulinis-tekstas {
         background: rgba(255, 255, 255, 0.24);
@@ -376,7 +424,13 @@ a {
         border-radius: 1rem;
         padding: 1.5rem;
         padding-bottom: 8rem;
-        margin-top: -2rem;
+        margin-top: -1rem;
+
+        .puslapis-sukis {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
 
         h1 {
             padding: 0rem 1rem 1rem 1rem;
@@ -585,7 +639,11 @@ footer {
     position: relative;
     width: 100%;
     z-index: 4;
+    margin-top: -1rem;
 
+    @include xl {
+        margin-top: 2rem;
+    }
     .kontaktai {
         width: 100%;
         //height: 18rem;

@@ -75,10 +75,16 @@ a:active {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 1rem;
+  padding: .25rem;
   margin: 0 auto;
   -webkit-transition: padding 200ms ease;
   transition: padding 200ms ease;
+}
+
+@media (min-width: 1200px) {
+  .navigacija .navigacija-wrap {
+    padding: 1rem;
+  }
 }
 
 .navigacija .navigacija-logo {
@@ -357,6 +363,19 @@ a:active {
   color: black;
 }
 
+.pagrindinis-containeris {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+@media (min-width: 1200px) {
+  .pagrindinis-containeris {
+    border-radius: 1rem;
+  }
+}
+
 .puslapis-titulinis {
   position: relative;
   width: 100%;
@@ -370,11 +389,56 @@ a:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url("media/titulinis.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  overflow: hidden;
+}
+
+.puslapis-titulinis .titulinis-fonai {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: black;
+}
+
+.puslapis-titulinis .titulinis-fonas {
+  position: fixed;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.puslapis-titulinis .titulinis-fonas .fonas-containeris {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.puslapis-titulinis .titulinis-fonas img {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .puslapis-titulinis .titulinis-tekstas {
@@ -434,7 +498,13 @@ a:active {
   border-radius: 1rem;
   padding: 1.5rem;
   padding-bottom: 8rem;
-  margin-top: -2rem;
+  margin-top: -1rem;
+}
+
+.puslapis-apie .puslapis-turinys .puslapis-sukis {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .puslapis-apie .puslapis-turinys h1 {
@@ -730,6 +800,13 @@ footer {
   position: relative;
   width: 100%;
   z-index: 4;
+  margin-top: -1rem;
+}
+
+@media (min-width: 1200px) {
+  footer {
+    margin-top: 2rem;
+  }
 }
 
 footer .kontaktai {

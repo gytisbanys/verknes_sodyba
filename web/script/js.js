@@ -47,4 +47,30 @@ $(".navigacija a").click(function() {
   $(".nuoroda").css({"height": aukstis, "top": "-" + aukstis });
 });
 
+$(function() {
+  var i = 0;
+  var slaidai = $(".titulinis-fonas").get();
+  
+  //Pirmas slaidas
+  $( $(slaidai)[i] ).show();
+
+  console.log ( $( $(slaidai)[i] ) );
+  function slaidu_keitaliojimas() {
+    if ( i > $(slaidai).length - 1 ) {
+      i = 0;
+      $( $(slaidai)[$(slaidai).length - 1] ).fadeOut(600);
+      $( $(slaidai)[i] ).fadeIn(600);
+    } else {
+      $( $(slaidai)[i-1] ).fadeOut(600);
+      $( $(slaidai)[i] ).fadeIn(600);
+    }
+    //console.log(i + " " + $(".titulinis-fonas").length);
+    i++;
+    
+  }
+
+  setInterval(slaidu_keitaliojimas, 6000);
+  slaidu_keitaliojimas();
+});
+
 });
